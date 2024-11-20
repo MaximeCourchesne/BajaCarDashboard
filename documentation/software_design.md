@@ -2,18 +2,6 @@
 ## Class Diagram
 
 ```mermaid
-classDiagram
-    class A {
-        +int x
-        +void display()
-    }
-    class B {
-        +int y
-    }
-    A <|-- B
-```
-
-```mermaid
 ---
 config:
   theme: neo
