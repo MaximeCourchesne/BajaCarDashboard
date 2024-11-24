@@ -1,5 +1,6 @@
 
 ## Class Diagram
+
 ```mermaid
 ---
 config:
