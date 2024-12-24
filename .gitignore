@@ -1,3 +1,6 @@
 
 *.pyc
 /src/dashboard/__pycache__
+/src/dashboard/__pycache__
+src/dashboard/__pycache__/Digit.cpython-312.pyc
+*.pyc
