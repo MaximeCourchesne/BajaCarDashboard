@@ -1,0 +1,3 @@
+
+*.pyc
+/src/dashboard/__pycache__
