@@ -1,6 +1,5 @@
 import pygame
 from dashboard.Utils import load_settings, load_image
-from dashboard.Digit import Digit
 from dashboard.FuelBar import FuelBar
 from dashboard.RPMBar import RPMBar
 from dashboard.SpeedDigits import SpeedDigits
@@ -54,34 +53,28 @@ class Window:
                     self.fuel_bar.update_fuel_level(self.fuel_bar.fuel_level - 0.1)
 
 
-    def clear_screen(self):
-        self.window.fill(self.background_color)
-
-    def update_display(self):
-        pygame.display.flip()
-
     def display_image(self, image, position):
         if image:
             self.window.blit(image, position)
 
-    def display(self):
-        pass
+    def draw_window(self):
+        # clear the screen
+        self.window.fill(self.background_color)
+
+        # display components
+        self.speed_digits.display()
+        self.display_image(self.logo, (self.width - 210, self.height - 290))  # Position near the top right
+        self.fuel_bar.display()
+
+        # update display
+        pygame.display.flip()
 
 
     def run(self):
         while self.running:
             self.listen_keyboard_events_for_testing()
-            self.clear_screen()
-            
-
+            # Window keeps track of current digit, fuel level, etc. Later we will poll sensor date instead and remove the counter in window class.
             self.speed_digits.set_speed(self.current_digit)
-            self.speed_digits.display()
-
-            self.display_image(self.logo, (self.width - 210, self.height - 290))  # Position near the top right
-            self.fuel_bar.display()
-            # RPM bar not fully working yet
-            # self.rpm_bar.display()
-
-            self.update_display()
+            self.draw_window()
 
         pygame.quit()

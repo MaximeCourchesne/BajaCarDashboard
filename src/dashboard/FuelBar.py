@@ -1,7 +1,8 @@
 import pygame
+from dashboard.Component import Component
 from dashboard.Utils import load_settings
 
-class FuelBar:
+class FuelBar(Component):
     def __init__(self, window, position=(50, 300), width=200, height=30, full_color=(0, 255, 0), empty_color=(255, 0, 0), border_color=[0, 0, 0], border_width=3):
         self.window = window
         self.position = position

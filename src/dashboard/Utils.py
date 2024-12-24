@@ -8,7 +8,6 @@ def load_settings(file_path="config/settings.json"):
 
 def load_image(image_path, size=None):
     try:
-        print(image_path)
         image = pygame.image.load(image_path)
         if size:
             image = pygame.transform.scale(image, size)

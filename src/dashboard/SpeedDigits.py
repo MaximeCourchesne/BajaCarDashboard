@@ -1,7 +1,8 @@
 from dashboard.Digit import Digit
 import math
+from dashboard.Component import Component
 
-class SpeedDigits:
+class SpeedDigits(Component):
     def __init__(self, window, position0=(50, 50), position1=(210, 50), segment_length=100, segment_width=15):
         self.window = window
         self.position0 = position0
@@ -16,8 +17,6 @@ class SpeedDigits:
         if 0 <= speed < 100:
             tens = math.floor(speed/10)
             ones = speed % 10
-            print(tens)
-            print(ones)
             self.digit_display0.set_digit(tens)
             self.digit_display1.set_digit(ones)
         else:
