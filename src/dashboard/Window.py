@@ -14,7 +14,7 @@ class Window:
         self.background_color = tuple(self.settings["window"]["background_color"])
 
         # Initialize pygame window
-        self.window = pygame.display.set_mode((self.width, self.height))
+        self.window = pygame.display.set_mode((self.width, self.height), pygame.FULLSCREEN)
         pygame.display.set_caption("Baja Dashboard")
         self.running = True
 

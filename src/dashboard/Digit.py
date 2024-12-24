@@ -3,7 +3,7 @@ from dashboard.Component import Component
 from dashboard.Utils import load_settings
 
 class Digit(Component):
-    def __init__(self, window, position=(50, 50), segment_length=100, segment_width=15):
+    def __init__(self, window, position=(50, 50), segment_length=100, segment_width=16):
         self.window = window
         self.position = position
         self.segment_length = segment_length

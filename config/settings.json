@@ -2,16 +2,16 @@
     "window": {
         "width": 1200,
         "height": 600,
-        "background_color": [255, 255, 255]
+        "background_color": [0, 0, 0]
     },
     "digit": {
-        "on_color": [50, 50, 50],
-        "off_color": [220, 220, 220]
+        "on_color": [220, 220, 220],
+        "off_color": [15, 15, 15]
     },
     "fuel_bar": {
         "full_color": [0, 255, 0],
         "empty_color": [255, 0, 0],
-        "border_color": [0, 0, 0],
+        "border_color": [255, 255, 255],
         "border_width": 2,
         "initial_level": 100
     }
