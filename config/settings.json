@@ -5,8 +5,8 @@
         "background_color": [255, 255, 255]
     },
     "digit": {
-        "on_color": [255, 0, 0],
-        "off_color": [50, 50, 50]
+        "on_color": [50, 50, 50],
+        "off_color": [220, 220, 220]
     },
     "fuel_bar": {
         "full_color": [0, 255, 0],

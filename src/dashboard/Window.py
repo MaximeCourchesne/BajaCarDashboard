@@ -38,9 +38,8 @@ class Window:
 
 
 
-
     # testing functions for displaying fuel and speed
-    def keyboard_events_for_testing(self):
+    def listen_keyboard_events_for_testing(self):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 self.running = False
@@ -65,12 +64,16 @@ class Window:
         if image:
             self.window.blit(image, position)
 
+    def display(self):
+        pass
+
 
     def run(self):
         while self.running:
-            self.keyboard_events_for_testing()
+            self.listen_keyboard_events_for_testing()
             self.clear_screen()
             
+
             self.speed_digits.set_speed(self.current_digit)
             self.speed_digits.display()
 

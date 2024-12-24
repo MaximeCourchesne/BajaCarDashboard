@@ -1,4 +1,5 @@
 import pygame
+from dashboard.Utils import load_settings
 
 class Digit:
     def __init__(self, window, position=(50, 50), segment_length=100, segment_width=15):
@@ -6,8 +7,9 @@ class Digit:
         self.position = position
         self.segment_length = segment_length
         self.segment_width = segment_width
-        self.segment_off_color = (220, 220, 220)
-        self.segment_on_color = (50, 50, 50)
+        settings = load_settings("config/settings.json")
+        self.segment_off_color = settings["digit"]["off_color"]
+        self.segment_on_color = settings["digit"]["on_color"]
         
         # Define positions the segments positions
         x, y = position

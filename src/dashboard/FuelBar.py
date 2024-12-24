@@ -1,4 +1,5 @@
 import pygame
+from dashboard.Utils import load_settings
 
 class FuelBar:
     def __init__(self, window, position=(50, 300), width=200, height=30, full_color=(0, 255, 0), empty_color=(255, 0, 0), border_color=[0, 0, 0], border_width=3):
@@ -8,9 +9,10 @@ class FuelBar:
         self.height = height
         self.full_color = full_color
         self.empty_color = empty_color
-        self.fuel_level = 0.75 
         self.border_color = border_color
         self.border_width = border_width
+        settings = load_settings("config/settings.json")
+        self.fuel_level = settings["fuel_bar"]["initial_level"]
 
 
 
