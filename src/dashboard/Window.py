@@ -8,22 +8,23 @@ from dashboard.SpeedDigits import SpeedDigits
 class Window:
     def __init__(self, settings_path="config/settings.json"):
         # Load settings from config/settings.json
-        self.settings = load_settings(settings_path)
+        self.settings = load_settings(settings_path)    
         self.width = self.settings["window"]["width"]
         self.height = self.settings["window"]["height"]
         self.background_color = tuple(self.settings["window"]["background_color"])
 
         # Initialize pygame window
-        self.window = pygame.display.set_mode((self.width, self.height), pygame.FULLSCREEN)
+        # self.window = pygame.display.set_mode((self.width, self.height), pygame.FULLSCREEN)
+        self.window = pygame.display.set_mode((self.width, self.height))
         pygame.display.set_caption("Baja Dashboard")
         self.running = True
 
-        self.speed_digits = SpeedDigits(self.window, position0=(50, 50), position1=(210, 50), segment_length=100, segment_width=15)
+        self.speed_digits = SpeedDigits(self.window, position0=(500, 60), position1=(650, 60), segment_length=100, segment_width=15)
 
         self.current_digit = 0
         self.fuel_bar = FuelBar(
             self.window,
-            position=(50, 300),
+            position=(300, 400),
             width=500,
             height=30,
             full_color=tuple(self.settings["fuel_bar"]["full_color"]),
@@ -33,7 +34,7 @@ class Window:
         )
         self.rpm_bar = RPMBar(self.window, position=(200, 200))
 
-        self.logo = load_image("assets/images/mcgill_logo.png", (1200/6, 1523/6))
+        # self.logo = load_image("assets/images/mcgill_logo.png", (1200/6, 1523/6))
 
 
 
@@ -63,7 +64,7 @@ class Window:
 
         # display components
         self.speed_digits.display()
-        self.display_image(self.logo, (self.width - 210, self.height - 290))  # Position near the top right
+        # self.display_image(self.logo, (self.width - 210, self.height - 290))  # Position near the top right
         self.fuel_bar.display()
 
         # update display
